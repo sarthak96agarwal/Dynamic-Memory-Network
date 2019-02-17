@@ -12,6 +12,12 @@ This Question Answering System is based on the paper "Ask Me Anything: Dynamic M
 * **Pandas** ([instructions](https://scipy.org/install.html))
 * **Matplotlib** ([instructions](https://scipy.org/install.html))
 
-### Model Architecture 
+### Dataset
+Download the bAbI tasks (tasks_1-20_v1-2.tar.gz) from https://research.facebook.com/research/babi/. <br />
+The data preparation code can be found in the [Data_prep.py](./Data_prep.py)
 
+### Model Architecture 
+The model consists of 4 modules as shown in the diagram below.
+![Model](figures/Model_arch.png)
+The model architecture implemnted in pytorch can be found in the [model.py](./model.py)
 ### Results
