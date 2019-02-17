@@ -17,6 +17,13 @@ flatten = lambda l: [item for sublist in l for item in sublist]
 from torch.nn.utils.rnn import PackedSequence, pack_padded_sequence
 random.seed(1024)
 
+USE_CUDA = torch.cuda.is_available()
+gpus = [0]
+torch.cuda.set_device(gpus[0])
+
+FloatTensor = torch.cuda.FloatTensor if USE_CUDA else torch.FloatTensor
+LongTensor = torch.cuda.LongTensor if USE_CUDA else torch.LongTensor
+ByteTensor = torch.cuda.ByteTensor if USE_CUDA else torch.ByteTensor
 
 class DMN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size, dropout_p=0.1):
